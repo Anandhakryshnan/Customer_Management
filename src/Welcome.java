@@ -110,7 +110,7 @@ public class Welcome extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
          try{
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
         Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/customer?","root","");
         Statement stmt=con.createStatement();
         ResultSet rs=stmt.executeQuery("select* from cust ");

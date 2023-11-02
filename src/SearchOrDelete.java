@@ -160,7 +160,7 @@ public class SearchOrDelete extends javax.swing.JFrame {
            
             Class.forName("com.mysql.cj.jdbc.Driver");
         Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/customer?","root","");
-        Statement stmt=con.createStatement();
+        Statement stmt=con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
         ResultSet rs=stmt.executeQuery("select* from cust where first='"+sname.getText()+"'");
         if (rs.next()==false)
             toast.setText("No Record found");
